@@ -12,12 +12,42 @@ public class ComUtilsService {
     }
 
     public void writeTest() {
-        //TODO: put your code here
+        try {
+            comUtils.write_string("Joaquim Comes");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            comUtils.write_int32(23);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            comUtils.write_string_variable(3, "12345678901234567890liuvhdoljfg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public String readTest() {
         String result = "";
-        //TODO: put your code here
+        try {
+            result = result + comUtils.read_string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            result = result + comUtils.read_int32();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            result = result+ comUtils.read_string_variable(3);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return result;
     }
 
